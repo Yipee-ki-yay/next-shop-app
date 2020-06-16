@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import { wrapper } from 'redux/store'
 
 export default function Home() {
   return (
@@ -12,6 +14,10 @@ export default function Home() {
         <h1 className="title">
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <Link href="/products">
+          <a>Products</a>
+        </Link>
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
@@ -207,3 +213,10 @@ export default function Home() {
     </div>
   )
 }
+
+export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
+  console.log('store', store);
+  
+  // store.dispatch(serverRenderClock(true))
+  // store.dispatch(addCount())
+})
