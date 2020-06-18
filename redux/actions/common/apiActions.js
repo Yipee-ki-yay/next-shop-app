@@ -4,7 +4,7 @@ import {
   getResponseMessage,
 } from 'services/api/api_helpers';
 import { toastr } from 'react-redux-toastr';
-import { push as routerPush } from 'react-router-redux';
+// import { push as routerPush } from 'react-router-redux';
 
 import { api } from 'services/api';
 import { clearAuth } from '../authActions';
@@ -18,7 +18,7 @@ const handleError = (error, { dispatch, reject=null, prefix }) => {
     if (error.response) {
       if (error.response.status === 401) {
         dispatch(clearAuth());
-        dispatch(routerPush('/auth/sign-in'));
+        // dispatch(routerPush('/auth/sign-in'));
         dispatch(setLoadingStatusFor(prefix)(false));
         dispatch(setSavingStatusFor(prefix)(false));
         if (reject) reject()

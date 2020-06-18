@@ -1,10 +1,7 @@
 import { useMemo } from 'react'
 import { applyMiddleware, createStore } from 'redux';
-// import { HYDRATE, createWrapper } from 'next-redux-wrapper'
-// import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers/index';
-// import browserHistory from 'services/browserHistory';
 
 let store;
 
@@ -54,3 +51,5 @@ export function useStore(initialState) {
   const store = useMemo(() => initializeStore(initialState), [initialState])
   return store
 }
+
+export default store;

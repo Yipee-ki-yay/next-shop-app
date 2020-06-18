@@ -9,7 +9,7 @@ import {
 
 import { api } from 'services/api';
 import { getResponseMessage, isSuccessStatus } from 'services/api/api_helpers';
-import { push as routerPush } from 'react-router-redux';
+// import { push as routerPush } from 'react-router-redux';
 import { toastr } from 'react-redux-toastr';
 
 const fetchAuthUser = () => {
@@ -50,7 +50,7 @@ const signIn = payload => {
 							dispatch(setLoadingStatusFor('AUTH_')(false));  
 						} catch(e) {console.log(e)}
 
-						dispatch(routerPush('/'));
+						// dispatch(routerPush('/'));
 						toastr.success('', `Вы вошли как ${user.login}`);
 					} else {
 						dispatch({ type: AUTH_CLEAR });

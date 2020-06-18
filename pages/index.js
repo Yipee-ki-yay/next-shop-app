@@ -3,13 +3,16 @@ import { useDispatch } from 'react-redux';
 import Head from 'next/head'
 import Link from 'next/link'
 import { initializeStore } from 'redux/store'
-// import { wrapper } from 'redux/store'
+import { incrementCount } from 'redux/actions/counterActions'
+import { fetchManagers } from 'redux/actions/managersActions';
+
 
 export default function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({type: 'INCREMENT'})
+    dispatch(incrementCount())
+    // dispatch(fetchManagers())
   }, []);
 
   return (
@@ -230,21 +233,12 @@ export default function Home() {
 //   // store.dispatch(addCount())
 // })
 
-export function getServerSideProps() {
-  console.log('getServerSideProps index.js');
-  
+export async function getServerSideProps() {
   const reduxStore = initializeStore()
   const { dispatch } = reduxStore
 
-  console.log('reduxStore state 1', reduxStore.getState());
-
-
-  dispatch({
-    type: 'INCREMENT',
-  })
-
-  console.log('reduxStore state 2', reduxStore.getState());
-
+  await dispatch(incrementCount())
+  await dispatch(fetchManagers({ getParams: { page: 0, size: 10 } }))
 
   return { 
     props: { 
