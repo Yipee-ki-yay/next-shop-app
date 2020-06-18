@@ -1,0 +1,15 @@
+.form-row + .form-row {
+  margin-top: 24px;
+}
+
+.form-label {
+  color: $fc-2;  
+
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.form-label + * ,
+.form-label + .MuiFormControl-root {
+  margin-top: 16px;
+}

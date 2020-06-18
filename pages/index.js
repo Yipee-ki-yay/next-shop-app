@@ -1,15 +1,25 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Head from 'next/head'
-import Link from 'next/link'
-import { initializeStore } from 'redux/store'
-import { incrementCount } from 'redux/actions/counterActions'
+import { initializeStore } from 'redux/store';
+
+// ----- Actions -----
+import { incrementCount } from 'redux/actions/counterActions';
 import { fetchManagers } from 'redux/actions/managersActions';
 
+// ----- Components -----
+import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Home() {
   const dispatch = useDispatch();
 
+  // ----- Local State -----
+
+  // ----- Methods -----
+
+  // ----- API Methods -----
+
+  // ----- Component Did Mount -----
   useEffect(() => {
     dispatch(incrementCount())
     // dispatch(fetchManagers())
@@ -18,6 +28,7 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
+        <meta name="description" content="Buy beautiful, high quality carpets for your home."/>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -226,13 +237,7 @@ export default function Home() {
   )
 }
 
-// export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
-//   console.log('store', store);
-  
-//   store.dispatch({type: 'INCREMENT'})
-//   // store.dispatch(addCount())
-// })
-
+// ----- SSR -----
 export async function getServerSideProps() {
   const reduxStore = initializeStore()
   const { dispatch } = reduxStore

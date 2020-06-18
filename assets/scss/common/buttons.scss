@@ -1,0 +1,65 @@
+.button-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  display: flex;
+  border: none;
+  cursor: pointer;
+
+  color: $fc-2;
+  background-color: transparent;
+}
+
+.button-close--static {
+  position: static;
+}
+
+.button-close--right {
+  right: -45px;
+  top: auto;
+  bottom: 8px;
+}
+
+.button-close--right-top {
+  right: -20px;
+  top: -20px;
+  
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+
+  background-color: #707070;
+}
+
+.button-close--inp {
+  top: 12px;
+  right: 8px;
+}
+
+.button-simple {
+  background-color: transparent;
+  border: none;
+}
+
+.button-open-modal {
+  padding: 10px 12px 10px 0;
+  
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.button-simple--back {
+  display: flex;
+  align-items: center;
+  padding: 0;
+
+  color: $fc-2;
+
+  span {
+    border-bottom: 1px solid;
+  }
+}
