@@ -14,6 +14,7 @@ import { combineReducers } from 'redux';
 // import catalogFullEditReducers from './catalogFullEditReducers';
 // import catalogAddReducers from './catalogAddReducers';
 import managersReducers from './managersReducers';
+import counterReducer from './counterReducer';
 // import productReducers from './productReducers';
 // import productEditReducers from './productEditReducers';
 
@@ -31,6 +32,7 @@ export default combineReducers({
 	// catalogFullEdit: catalogFullEditReducers,
 	// catalogAdd: catalogAddReducers,
 	managers: managersReducers,
+	counter: counterReducer,
 	// product: productReducers,
 	// productEdit: productEditReducers,
 });

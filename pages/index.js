@@ -1,8 +1,16 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Head from 'next/head'
 import Link from 'next/link'
 import { wrapper } from 'redux/store'
 
 export default function Home() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({type: 'INCREMENT'})
+  }, []);
+
   return (
     <div className="container">
       <Head>
@@ -217,6 +225,6 @@ export default function Home() {
 export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
   console.log('store', store);
   
-  // store.dispatch(serverRenderClock(true))
+  store.dispatch({type: 'INCREMENT'})
   // store.dispatch(addCount())
 })
