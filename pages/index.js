@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Head from 'next/head'
 import Link from 'next/link'
-import { wrapper } from 'redux/store'
+import { initializeStore } from 'redux/store'
+// import { wrapper } from 'redux/store'
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -222,9 +223,32 @@ export default function Home() {
   )
 }
 
-export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
-  console.log('store', store);
+// export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
+//   console.log('store', store);
   
-  store.dispatch({type: 'INCREMENT'})
-  // store.dispatch(addCount())
-})
+//   store.dispatch({type: 'INCREMENT'})
+//   // store.dispatch(addCount())
+// })
+
+export function getServerSideProps() {
+  console.log('getServerSideProps index.js');
+  
+  const reduxStore = initializeStore()
+  const { dispatch } = reduxStore
+
+  console.log('reduxStore state 1', reduxStore.getState());
+
+
+  dispatch({
+    type: 'INCREMENT',
+  })
+
+  console.log('reduxStore state 2', reduxStore.getState());
+
+
+  return { 
+    props: { 
+      initialReduxState: reduxStore.getState() 
+    } 
+  }
+}
