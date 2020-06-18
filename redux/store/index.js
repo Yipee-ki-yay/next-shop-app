@@ -16,11 +16,16 @@ import rootReducer from '../reducers/index';
 
 const reducer = (state, action) => {
   if (action.type === HYDRATE) {
+    console.log('state', state);
+    console.log(action);
+    
+    if ( state.counter !== 0 ) return state;
+
     const nextState = {
       ...state, // use previous state
       ...action.payload, // apply delta from hydration
     }
-    // if (state.count) nextState.count = state.count // preserve count value on client side navigation
+    // if (state.counter) nextState.counter = state.counter // preserve count value on client side navigation
     return nextState
   } else {
     return rootReducer(state, action)
