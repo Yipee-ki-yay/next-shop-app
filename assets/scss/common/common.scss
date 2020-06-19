@@ -4,6 +4,12 @@ button {
   cursor: pointer;
 }
 
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 img {
   width: 100%;
 }
@@ -23,4 +29,17 @@ img {
 
 .pointer {
   cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.with-icon {
+  display: flex;
+  align-items: center;
+
+  svg + span {
+    margin-left: 8px;
+  }
 }

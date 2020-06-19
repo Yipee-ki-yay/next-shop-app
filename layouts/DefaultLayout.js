@@ -1,13 +1,17 @@
 import React from 'react';
-import Header from 'components/Header';
+
+// ----- Components -----
+import Header from 'components/Header/Header';
+import Footer from 'components/Footer';
 
 const DefaultLayout = ({children}) => (
-  <div>
+  <>
     <Header></Header>
     <main className="main">
       {children}
     </main>
-  </div>
+    <Footer></Footer>
+  </>
 );
 
 export default DefaultLayout;

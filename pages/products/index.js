@@ -18,27 +18,26 @@ const Products = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <Head>
         <meta name="description" content="Buy beautiful, high quality carpets for your home."/>
         <title>Products</title>
       </Head>
 
-      Products
+      <h1>Products</h1>
+      
       <Link href="/">
         <a>main</a>
       </Link>
-    </div>
+    </>
   );
 };
 
 // ----- SSR -----
-export async function getServerSideProps(context) {
-  console.log('products getServerSideProps log');
+Products.getInitialProps = async () => {
+  console.log('products getInitialProps log');
   
-  return {
-    props: {}, // will be passed to the page component as props
-  }
+  return {}
 }
 
 export default Products;

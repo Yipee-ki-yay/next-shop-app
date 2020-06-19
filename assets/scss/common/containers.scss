@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  max-width: $containerWidthSm;
+  padding: 0 $containerPadding;
+  box-sizing: border-box;
+  margin: 0 auto;
+
+  @media (min-width: $md) {
+    max-width: $containerWidthMd;
+  }
+
+  @media (min-width: $lg) {
+    padding: 0 $containerPaddingDesktop;
+    max-width: $containerWidthLg;
+  }
+
+  @media (min-width: $xl) {
+    max-width: $containerWidthXl;
+  }
+}

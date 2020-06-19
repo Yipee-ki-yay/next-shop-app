@@ -1,7 +1,7 @@
 .title-page {
   margin: 0;
   
-  color: $fc-1;
+  color: $c-1;
   
   font-weight: bold;
   font-size: 34px;
@@ -9,28 +9,17 @@
   letter-spacing: 0.01em;
 }
 
-.title-section {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 23px;
+.text-accent {
+  font-size: 16px;
+  line-height: 19px;
 }
 
-.title-cell {
-  display: inline-block;
-  min-width: 140px;
-  color: $fc-3;
-
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.title-cell--small {
-  min-width: 70px;
+.black {
+  color: black;
 }
 
 .grey {
-  color: $fc-2;
+  color: $c-2;
 }
 
 .green {
@@ -39,4 +28,8 @@
 
 .blue {
   color: #2C8CFD;
+}
+
+.bold {
+  font-weight: bold;
 }
